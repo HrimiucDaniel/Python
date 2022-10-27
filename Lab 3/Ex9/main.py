@@ -1,0 +1,2 @@
+def arguments(*data, **kwargs):
+
