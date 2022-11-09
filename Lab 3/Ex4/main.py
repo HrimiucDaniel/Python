@@ -1,7 +1,11 @@
-def build_xml_element(tag, content, key_value):
+def build_xml_element(tag, content, **kwargs):
     string = ""
     string += "<"
     string += tag
+    key_value = dict()
+    for key in kwargs.keys():
+        key_value[key] = kwargs[key]
+
     for element in key_value.keys():
         string += " "
         string += element.__str__()
@@ -17,9 +21,4 @@ def build_xml_element(tag, content, key_value):
     return string
 
 
-
-x = dict()
-x["href"] = "http://python.org"
-x["_class"] = " my link "
-x["id"] = "some id"
-print(build_xml_element("a", "Hello there", x))
+print(build_xml_element("a", "Hello there", href=" http://python.org ", _class=" my-link ", id=" someid "))
