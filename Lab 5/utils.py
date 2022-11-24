@@ -10,6 +10,8 @@ def process_item(x):
     if prime_number(y) == True:
       return y
     y += 1
-  
-number = input("Enter number: ")
-print(process_item(number))
+
+if __name__ == "__main__":
+  number = input("Enter number: ")
+  print(process_item(number))
+  print("Salut")
